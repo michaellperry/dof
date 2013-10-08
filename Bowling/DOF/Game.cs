@@ -8,8 +8,6 @@ namespace Bowling.DOF
         private int _firstExtra;
         private int _secondExtra;
 
-        private int _currentFrame;
-
         public Game()
         {
             _frames = Enumerable
@@ -18,28 +16,25 @@ namespace Bowling.DOF
                 .ToArray();
             _firstExtra = 0;
             _secondExtra = 0;
-
-            _currentFrame = 0;
         }
 
-        public void Roll(int pins)
+        public GameProgress Roll(int pins, GameProgress current)
         {
-            if (_currentFrame < 10)
+            if (current.Frame < 10)
             {
-                _frames[_currentFrame].Roll(pins);
-                if (_frames[_currentFrame].IsClosed)
-                    _currentFrame++;
+                current.Roll = _frames[current.Frame].Roll(pins, current.Roll);
+                if (!_frames[current.Frame].IsStrike || current.Roll == 2)
+                    return current;
             }
-            else if (_currentFrame == 10)
+            else if (current.Frame == 10)
             {
                 _firstExtra = pins;
-                _currentFrame++;
             }
-            else if (_currentFrame == 11)
+            else if (current.Frame == 11)
             {
                 _secondExtra = pins;
-                _currentFrame++;
             }
+            return new GameProgress { Frame = current.Frame + 1, Roll = 0 };
         }
 
         public int Score
