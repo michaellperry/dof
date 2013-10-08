@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bowling", "Bowling\Bowling.csproj", "{F56EA9BD-E324-4CEA-B0A3-9F57CE8FD7AB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DungeonsAndDragons", "DungeonsAndDragons\DungeonsAndDragons.csproj", "{2D6EC216-7988-449C-ABA6-1C797C551768}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{F56EA9BD-E324-4CEA-B0A3-9F57CE8FD7AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F56EA9BD-E324-4CEA-B0A3-9F57CE8FD7AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F56EA9BD-E324-4CEA-B0A3-9F57CE8FD7AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D6EC216-7988-449C-ABA6-1C797C551768}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D6EC216-7988-449C-ABA6-1C797C551768}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D6EC216-7988-449C-ABA6-1C797C551768}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D6EC216-7988-449C-ABA6-1C797C551768}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
