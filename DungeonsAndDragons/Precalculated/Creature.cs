@@ -1,5 +1,5 @@
 ﻿
-namespace DungeonsAndDragons.Algorithmic
+namespace DungeonsAndDragons.Precalculated
 {
     public class Creature
     {

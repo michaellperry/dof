@@ -1,4 +1,4 @@
-﻿using DungeonsAndDragons.Algorithmic;
+﻿using DungeonsAndDragons.Precalculated;
 using FluentAssertions;
 using Xunit;
 

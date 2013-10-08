@@ -45,11 +45,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Algorithmic\Character.cs" />
-    <Compile Include="Algorithmic\Creature.cs" />
-    <Compile Include="Algorithmic\IWeapon.cs" />
-    <Compile Include="Algorithmic\Race.cs" />
-    <Compile Include="Algorithmic\Sword.cs" />
+    <Compile Include="Precalculated\Character.cs" />
+    <Compile Include="Precalculated\Creature.cs" />
+    <Compile Include="Precalculated\IWeapon.cs" />
+    <Compile Include="Precalculated\Race.cs" />
+    <Compile Include="Precalculated\Sword.cs" />
     <Compile Include="DOF\Character.cs" />
     <Compile Include="DOF\Creature.cs" />
     <Compile Include="DOF\IWeapon.cs" />
