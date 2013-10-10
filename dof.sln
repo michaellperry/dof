@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bowling", "Bowling\Bowling.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DungeonsAndDragons", "DungeonsAndDragons\DungeonsAndDragons.csproj", "{2D6EC216-7988-449C-ABA6-1C797C551768}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SettlersOfCatan", "SettlersOfCatan\SettlersOfCatan.csproj", "{E40FBAEF-97E9-45FC-A6A8-0A5A830D39D0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{2D6EC216-7988-449C-ABA6-1C797C551768}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D6EC216-7988-449C-ABA6-1C797C551768}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D6EC216-7988-449C-ABA6-1C797C551768}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E40FBAEF-97E9-45FC-A6A8-0A5A830D39D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E40FBAEF-97E9-45FC-A6A8-0A5A830D39D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E40FBAEF-97E9-45FC-A6A8-0A5A830D39D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E40FBAEF-97E9-45FC-A6A8-0A5A830D39D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
