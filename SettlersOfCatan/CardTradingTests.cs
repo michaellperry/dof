@@ -2,6 +2,8 @@
 using FluentAssertions;
 using SettlersOfCatan.Mutable;
 using Xunit;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace SettlersOfCatan
 {
@@ -70,5 +72,33 @@ namespace SettlersOfCatan
             trade.ShouldThrow<ArgumentException>(
                 "The player does not have enough Wood.");
         }
+
+        //[Fact]
+        //public void CanSeeAHistoryOfMoves()
+        //{
+        //    Player one = _game.GetPlayer(0);
+        //    Player two = _game.GetPlayer(1);
+        //
+        //    _game.Draw(one, new Resources
+        //    {
+        //        Wood = 2,
+        //        Brick = 1
+        //    });
+        //    _game.Draw(two, new Resources
+        //    {
+        //        Wool = 1,
+        //        Wheat = 1
+        //    });
+        //
+        //    _game.Trade(
+        //        one, new Resources { Wood = 1 },
+        //        two, new Resources { Wheat = 1 });
+        //
+        //    Move[] moves = _game.Moves.ToArray();
+        //    moves.Length.Should().Be(3);
+        //    moves[0].Should().BeOfType<Draw>();
+        //    moves[1].Should().BeOfType<Draw>();
+        //    moves[2].Should().BeOfType<Trade>();
+        //}
     }
 }

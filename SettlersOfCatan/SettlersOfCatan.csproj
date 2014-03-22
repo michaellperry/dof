@@ -48,6 +48,7 @@
     <Compile Include="CardTradingTests.cs" />
     <Compile Include="DOF\Draw.cs" />
     <Compile Include="DOF\Game.cs" />
+    <Compile Include="DOF\Move.cs" />
     <Compile Include="DOF\Player.cs" />
     <Compile Include="DOF\Resources.cs" />
     <Compile Include="DOF\ResourcesExtensions.cs" />

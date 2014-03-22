@@ -1,7 +1,7 @@
 
 namespace SettlersOfCatan.DOF
 {
-    public class Trade
+    public class Trade : Move
     {
         public Player PlayerA { get; set; }
         public Resources ResourcesA { get; set; }
