@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="Precalculated\Character.cs" />
     <Compile Include="Precalculated\Creature.cs" />
+    <Compile Include="Precalculated\ElvenSword.cs" />
     <Compile Include="Precalculated\IWeapon.cs" />
     <Compile Include="Precalculated\Race.cs" />
     <Compile Include="Precalculated\Sword.cs" />

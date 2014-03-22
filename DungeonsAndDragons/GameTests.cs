@@ -12,7 +12,7 @@ namespace DungeonsAndDragons
         public GameTests()
         {
             _character = new Character();
-            _creature = new Creature() { ArmorClass = 14 };
+            _creature = new Creature() { ArmorClass = 14, Race = Race.Orc };
 
             _character.Level = 1;
             _character.Dexterity = 10;
@@ -37,5 +37,25 @@ namespace DungeonsAndDragons
 
             hit.Should().Be(true);
         }
+
+        //[Fact]
+        //public void ElvenSword_Miss()
+        //{
+        //    _character.Equip(new ElvenSword(1));
+        //    int roll = 10;
+        //    bool hit = _character.Attack(_creature, roll);
+        //
+        //    hit.Should().Be(false);
+        //}
+
+        //[Fact]
+        //public void ElvenSword_Hit()
+        //{
+        //    _character.Equip(new ElvenSword(1));
+        //    int roll = 11;
+        //    bool hit = _character.Attack(_creature, roll);
+        //
+        //    hit.Should().Be(true);
+        //}
     }
 }
