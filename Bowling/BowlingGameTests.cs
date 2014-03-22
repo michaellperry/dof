@@ -1,4 +1,4 @@
-﻿using Bowling.Algorithmic;
+﻿using Bowling.DOF;
 using FluentAssertions;
 using Xunit;
 
@@ -6,67 +6,75 @@ namespace Bowling
 {
     public class BowlingGameTests
     {
-        private Scorer scorer;
+        private Game game = new Game();
 
-        public BowlingGameTests()
+        private void RollOneFrame(int firstRoll, int secondRoll, int startingIndex = 0)
         {
-            scorer = new Scorer();
+            game.Frame(startingIndex).FirstRoll = firstRoll;
+            game.Frame(startingIndex).SecondRoll = secondRoll;
         }
 
-        private void RollManyBallsWithSameNumberOfPins(int numberOfBalls, int pins)
+        private void RollManyFrames(int firstRoll, int secondRoll, int startingIndex = 0)
         {
-            for (var i = 0; i < numberOfBalls; i++)
-                scorer.Roll(pins);
+            for (var frameIndex = startingIndex; frameIndex < 10; frameIndex++)
+            {
+                Frame frame = game.Frame(frameIndex);
+                frame.FirstRoll = firstRoll;
+                frame.SecondRoll = secondRoll;
+            }
         }
 
         [Fact]
         public void CalculateScore_AllBallsAreGutterBalls_0()
         {
-            RollManyBallsWithSameNumberOfPins(20, 0);
-            var score = scorer.CalculateScore();
-            score.Should().Be(0);
+            RollManyFrames(0, 0);
+            
+            game.Score.Should().Be(0);
         }
 
         [Fact]
         public void CalculateScore_AllBallsKnockDownOnePin_20()
         {
-            RollManyBallsWithSameNumberOfPins(20, 1);
-            var score = scorer.CalculateScore();
-            score.Should().Be(20);
+            RollManyFrames(1, 1);
+            
+            game.Score.Should().Be(20);
         }
 
         [Fact]
         public void CalculateScore_FirstFrameIsStrikeRestOnes_30()
         {
-            scorer.Roll(10);
-            RollManyBallsWithSameNumberOfPins(18, 1);
-            var score = scorer.CalculateScore();
-            score.Should().Be(30);
+            RollOneFrame(10, 0);
+            RollManyFrames(1, 1, 1);
+            
+            game.Score.Should().Be(30);
         }
 
         [Fact]
         public void CalculateScore_AllFramesAreStrikes_300()
         {
-            RollManyBallsWithSameNumberOfPins(12, 10);
-            var score = scorer.CalculateScore();
-            score.Should().Be(300);
+            RollManyFrames(10, 0);
+            game.FirstExtra = 10;
+            game.SecondExtra = 10;
+            
+            game.Score.Should().Be(300);
         }
 
         [Fact]
         public void CalculateScore_FirstFrameIsSpareRestOnes_29()
         {
-            RollManyBallsWithSameNumberOfPins(2, 5);
-            RollManyBallsWithSameNumberOfPins(18, 1);
-            var score = scorer.CalculateScore();
-            score.Should().Be(29);
+            RollOneFrame(5, 5);
+            RollManyFrames(1, 1, 1);
+            
+            game.Score.Should().Be(29);
         }
 
         [Fact]
         public void CalculateScore_AllFramesAreSpares_150()
         {
-            RollManyBallsWithSameNumberOfPins(21, 5);
-            var score = scorer.CalculateScore();
-            score.Should().Be(150);
+            RollManyFrames(5, 5);
+            game.FirstExtra = 5;
+            
+            game.Score.Should().Be(150);
         }
-     }
+    }
 }

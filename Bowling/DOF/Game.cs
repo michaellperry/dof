@@ -18,23 +18,21 @@ namespace Bowling.DOF
             _secondExtra = 0;
         }
 
-        public GameProgress Roll(int pins, GameProgress current)
+        public Frame Frame(int index)
         {
-            if (current.Frame < 10)
-            {
-                current.Roll = _frames[current.Frame].Roll(pins, current.Roll);
-                if (!_frames[current.Frame].IsStrike || current.Roll == 2)
-                    return current;
-            }
-            else if (current.Frame == 10)
-            {
-                _firstExtra = pins;
-            }
-            else if (current.Frame == 11)
-            {
-                _secondExtra = pins;
-            }
-            return new GameProgress { Frame = current.Frame + 1, Roll = 0 };
+            return _frames[index];
+        }
+
+        public int FirstExtra
+        {
+            get { return _firstExtra; }
+            set { _firstExtra = value; }
+        }
+
+        public int SecondExtra
+        {
+            get { return _secondExtra; }
+            set { _secondExtra = value; }
         }
 
         public int Score

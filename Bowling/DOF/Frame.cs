@@ -19,14 +19,16 @@ namespace Bowling.DOF
             _secondRoll = 0;
         }
 
-        public int Roll(int pins, int roll)
+        public int FirstRoll
         {
-            if (roll == 0)
-                _firstRoll = pins;
-            else
-                _secondRoll = pins;
+            get { return _firstRoll; }
+            set { _firstRoll = value; }
+        }
 
-            return roll + 1;
+        public int SecondRoll
+        {
+            get { return _secondRoll; }
+            set { _secondRoll = value; }
         }
 
         public bool IsStrike

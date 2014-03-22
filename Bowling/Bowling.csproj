@@ -49,8 +49,6 @@
     <Compile Include="BowlingGameTests.cs" />
     <Compile Include="DOF\Frame.cs" />
     <Compile Include="DOF\Game.cs" />
-    <Compile Include="DOF\GameProgress.cs" />
-    <Compile Include="DOF\Scorer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
