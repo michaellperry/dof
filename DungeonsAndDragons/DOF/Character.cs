@@ -46,7 +46,7 @@ namespace DungeonsAndDragons.DOF
 
         public bool Attack(Creature creature, int roll)
         {
-            return CurrentAttack + roll > creature.ArmorClass;
+            return CurrentAttack + roll >= creature.ArmorClass;
         }
     }
 }

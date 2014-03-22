@@ -23,7 +23,7 @@ namespace DungeonsAndDragons
         [Fact]
         public void MeleeAttack_Miss()
         {
-            int roll = 12;
+            int roll = 11;
             bool hit = _character.Attack(_creature, roll);
 
             hit.Should().Be(false);
@@ -32,7 +32,7 @@ namespace DungeonsAndDragons
         [Fact]
         public void MeleeAttack_Hit()
         {
-            int roll = 13;
+            int roll = 12;
             bool hit = _character.Attack(_creature, roll);
 
             hit.Should().Be(true);
