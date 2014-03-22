@@ -9,7 +9,8 @@ namespace Bowling.Algorithmic
 
         private int _firstRoll;
         private int _secondRoll;
-        private int _score;
+
+        public int Score { get; private set; }
 
         public Frame(Game game, int index)
         {
@@ -23,8 +24,8 @@ namespace Bowling.Algorithmic
             set
             {
                 _firstRoll = value;
-                _score += value;
-                _game.ScoreBonusFirstRoll(value, _index);
+                Score += value;
+                _game.ScoreBonusForFirstRoll(value, _index);
             }
         }
 
@@ -34,29 +35,24 @@ namespace Bowling.Algorithmic
             set
             {
                 _secondRoll = value;
-                _score += value;
-                _game.ScoreBonusSecondRoll(value, _index);
+                Score += value;
+                _game.ScoreBonusForSecondRoll(value, _index);
             }
         }
 
-        public int Score
-        {
-            get { return _score; }
-        }
-
-        internal void Bonus(int roll)
+        internal void BonusIfClosed(int roll)
         {
             if (_firstRoll + _secondRoll == 10)
             {
-                _score += roll;
+                Score += roll;
             }
         }
 
-        public void BonusStrike(int roll)
+        public void BonusIfStrike(int roll)
         {
             if (_firstRoll == 10)
             {
-                _score += roll;
+                Score += roll;
             }
         }
     }

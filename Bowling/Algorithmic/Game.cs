@@ -27,7 +27,7 @@ namespace Bowling.Algorithmic
             set
             {
                 _firstExtra = value;
-                ScoreBonusFirstRoll(value, 10);
+                ScoreBonusForFirstRoll(value, 10);
             }
         }
 
@@ -37,7 +37,7 @@ namespace Bowling.Algorithmic
             set
             {
                 _secondExtra = value;
-                ScoreBonusSecondRoll(value, 10);
+                ScoreBonusForSecondRoll(value, 10);
             }
         }
 
@@ -46,23 +46,23 @@ namespace Bowling.Algorithmic
             get { return _frames.Sum(f => f.Score); }
         }
 
-        internal void ScoreBonusFirstRoll(int value, int index)
+        internal void ScoreBonusForFirstRoll(int value, int index)
         {
             if (index > 0)
             {
-                _frames[index - 1].Bonus(value);
+                _frames[index - 1].BonusIfClosed(value);
                 if (index > 1 && _frames[index - 1].FirstRoll == 10)
                 {
-                    _frames[index - 2].BonusStrike(value);
+                    _frames[index - 2].BonusIfStrike(value);
                 }
             }
         }
 
-        internal void ScoreBonusSecondRoll(int value, int index)
+        internal void ScoreBonusForSecondRoll(int value, int index)
         {
             if (index > 0)
             {
-                _frames[index - 1].BonusStrike(value);
+                _frames[index - 1].BonusIfStrike(value);
             }
         }
     }
