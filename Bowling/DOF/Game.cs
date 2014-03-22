@@ -14,8 +14,6 @@ namespace Bowling.DOF
                 .Range(0, 10)
                 .Select(i => new Frame(this, i))
                 .ToArray();
-            _firstExtra = 0;
-            _secondExtra = 0;
         }
 
         public Frame Frame(int index)

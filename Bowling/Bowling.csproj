@@ -45,7 +45,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Algorithmic\Scorer.cs" />
+    <Compile Include="Algorithmic\Frame.cs" />
+    <Compile Include="Algorithmic\Game.cs" />
     <Compile Include="BowlingGameTests.cs" />
     <Compile Include="DOF\Frame.cs" />
     <Compile Include="DOF\Game.cs" />

@@ -14,9 +14,6 @@ namespace Bowling.DOF
         {
             _game = game;
             _index = index;
-
-            _firstRoll = 0;
-            _secondRoll = 0;
         }
 
         public int FirstRoll
@@ -29,11 +26,6 @@ namespace Bowling.DOF
         {
             get { return _secondRoll; }
             set { _secondRoll = value; }
-        }
-
-        public bool IsStrike
-        {
-            get { return _firstRoll == 10; }
         }
 
         public int Score

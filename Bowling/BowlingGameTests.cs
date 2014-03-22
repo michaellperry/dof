@@ -1,4 +1,4 @@
-﻿using Bowling.DOF;
+﻿using Bowling.Algorithmic;
 using FluentAssertions;
 using Xunit;
 
@@ -8,19 +8,18 @@ namespace Bowling
     {
         private Game game = new Game();
 
-        private void RollOneFrame(int firstRoll, int secondRoll, int startingIndex = 0)
+        private void RollOneFrame(int firstRoll, int secondRoll, int frameIndex = 0)
         {
-            game.Frame(startingIndex).FirstRoll = firstRoll;
-            game.Frame(startingIndex).SecondRoll = secondRoll;
+            Frame frame = game.Frame(frameIndex);
+            frame.FirstRoll = firstRoll;
+            frame.SecondRoll = secondRoll;
         }
 
         private void RollManyFrames(int firstRoll, int secondRoll, int startingIndex = 0)
         {
             for (var frameIndex = startingIndex; frameIndex < 10; frameIndex++)
             {
-                Frame frame = game.Frame(frameIndex);
-                frame.FirstRoll = firstRoll;
-                frame.SecondRoll = secondRoll;
+                RollOneFrame(firstRoll, secondRoll, frameIndex);
             }
         }
 
