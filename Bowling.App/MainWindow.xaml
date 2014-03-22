@@ -1,0 +1,23 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Controls="clr-namespace:Bowling.App.Controls" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="Bowling.App.MainWindow"
+        Title="Bowling" Height="350" Width="924"
+		DataContext="{Binding Game, Source={StaticResource Locator}}">
+	<Window.Resources>
+		<DataTemplate x:Key="FrameViewModelTemplate">
+			<Controls:FrameControl/>
+		</DataTemplate>
+		<ItemsPanelTemplate x:Key="FramesItemsPanelTemplate">
+			<VirtualizingStackPanel IsItemsHost="True" Orientation="Horizontal"/>
+		</ItemsPanelTemplate>
+	</Window.Resources>
+	<Grid>
+		<ScrollViewer VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Visible">
+        
+			<ItemsControl Margin="6" ItemsSource="{Binding Frames}" ItemTemplate="{DynamicResource FrameViewModelTemplate}" ItemsPanel="{DynamicResource FramesItemsPanelTemplate}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        
+		</ScrollViewer>
+        
+	</Grid>
+</Window>

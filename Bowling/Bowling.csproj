@@ -40,6 +40,15 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="UpdateControls">
+      <HintPath>..\packages\UpdateControls.2.3.0.4\lib\net45\UpdateControls.dll</HintPath>
+    </Reference>
+    <Reference Include="UpdateControls.Forms">
+      <HintPath>..\packages\UpdateControls.2.3.0.4\lib\net45\UpdateControls.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="UpdateControls.XAML">
+      <HintPath>..\packages\UpdateControls.2.3.0.4\lib\net45\UpdateControls.XAML.dll</HintPath>
+    </Reference>
     <Reference Include="xunit">
       <HintPath>..\packages\xunit.1.9.2\lib\net20\xunit.dll</HintPath>
     </Reference>

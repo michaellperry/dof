@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace Bowling.Algorithmic
 {
@@ -16,9 +17,9 @@ namespace Bowling.Algorithmic
                 .ToArray();
         }
 
-        public Frame Frame(int index)
+        public IEnumerable<Frame> Frames
         {
-            return _frames[index];
+            get { return _frames; }
         }
 
         public int FirstExtra

@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
+using UpdateControls.Fields;
 
 namespace Bowling.DOF
 {
@@ -16,9 +18,9 @@ namespace Bowling.DOF
                 .ToArray();
         }
 
-        public Frame Frame(int index)
+        public IEnumerable<Frame> Frames
         {
-            return _frames[index];
+            get { return _frames; }
         }
 
         public int FirstExtra
@@ -43,7 +45,7 @@ namespace Bowling.DOF
             if (index < 9)
                 return _frames[index + 1].OneRoll;
 
-            return _firstExtra;
+            return FirstExtra;
         }
 
         internal int NextTwo(int index)
@@ -51,7 +53,7 @@ namespace Bowling.DOF
             if (index < 9)
                 return _frames[index + 1].TwoRolls;
 
-            return _firstExtra + _secondExtra;
+            return FirstExtra + SecondExtra;
         }
     }
 }

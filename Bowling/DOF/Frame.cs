@@ -1,4 +1,5 @@
 using System;
+using UpdateControls.Fields;
 
 namespace Bowling.DOF
 {
@@ -32,29 +33,29 @@ namespace Bowling.DOF
         {
             get
             {
-                if (_firstRoll == 10)
+                if (FirstRoll == 10)
                     return 10 + _game.NextTwo(_index);
 
-                if (_firstRoll + _secondRoll == 10)
+                if (FirstRoll + SecondRoll == 10)
                     return 10 + _game.NextOne(_index);
 
-                return _firstRoll + _secondRoll;
+                return FirstRoll + SecondRoll;
             }
         }
 
         public int OneRoll
         {
-            get { return _firstRoll; }
+            get { return FirstRoll; }
         }
 
         public int TwoRolls
         {
             get
             {
-                if (_firstRoll == 10)
+                if (FirstRoll == 10)
                     return 10 + _game.NextOne(_index);
 
-                return _firstRoll + _secondRoll;
+                return FirstRoll + SecondRoll;
             }
         }
     }

@@ -1,5 +1,6 @@
 ﻿using Bowling.Algorithmic;
 using FluentAssertions;
+using System.Linq;
 using Xunit;
 
 namespace Bowling
@@ -10,7 +11,7 @@ namespace Bowling
 
         private void RollOneFrame(int firstRoll, int secondRoll, int frameIndex = 0)
         {
-            Frame frame = game.Frame(frameIndex);
+            Frame frame = game.Frames.ElementAt(frameIndex);
             frame.FirstRoll = firstRoll;
             frame.SecondRoll = secondRoll;
         }
