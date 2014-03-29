@@ -30,9 +30,9 @@ namespace DungeonsAndDragons.Precalculated
             }
         }
 
-        public int BaseMeleeAttack { get; set; }
-        public int BaseRangedAttack { get; set; }
-        public int CurrentAttack { get; set; }
+        public int BaseMeleeAttack { get; private set; }
+        public int BaseRangedAttack { get; private set; }
+        public int CurrentAttack { get; private set; }
 
         public void Equip(IWeapon weapon)
         {

@@ -38,24 +38,24 @@ namespace DungeonsAndDragons
             hit.Should().Be(true);
         }
 
-        //[Fact]
-        //public void ElvenSword_Miss()
-        //{
-        //    _character.Equip(new ElvenSword(1));
-        //    int roll = 10;
-        //    bool hit = _character.Attack(_creature, roll);
-        //
-        //    hit.Should().Be(false);
-        //}
+        [Fact]
+        public void ElvenSword_Miss()
+        {
+            _character.Equip(new ElvenSword(1));
+            int roll = 10;
+            bool hit = _character.Attack(_creature, roll);
 
-        //[Fact]
-        //public void ElvenSword_Hit()
-        //{
-        //    _character.Equip(new ElvenSword(1));
-        //    int roll = 11;
-        //    bool hit = _character.Attack(_creature, roll);
-        //
-        //    hit.Should().Be(true);
-        //}
+            hit.Should().Be(false);
+        }
+
+        [Fact]
+        public void ElvenSword_Hit()
+        {
+            _character.Equip(new ElvenSword(1));
+            int roll = 11;
+            bool hit = _character.Attack(_creature, roll);
+
+            hit.Should().Be(true);
+        }
     }
 }

@@ -1,4 +1,4 @@
-﻿using Bowling.Algorithmic;
+﻿using Bowling.DOF;
 using FluentAssertions;
 using System.Linq;
 using Xunit;
@@ -77,23 +77,23 @@ namespace Bowling
             game.Score.Should().Be(150);
         }
 
-        //[Fact]
-        //public void EditFrame_AllBallsKnockDownOnePin_OneMorePin_21()
-        //{
-        //    RollManyFrames(1, 1);
-        //    game.Frames.ElementAt(2).FirstRoll = 2;
-        //
-        //    game.Score.Should().Be(21);
-        //}
+        [Fact]
+        public void EditFrame_AllBallsKnockDownOnePin_OneMorePin_21()
+        {
+            RollManyFrames(1, 1);
+            game.Frames.ElementAt(2).FirstRoll = 2;
 
-        //[Fact]
-        //public void EditFrame_MakeFirstFrameASpareRestOnes_29()
-        //{
-        //    RollManyFrames(1, 1);
-        //    game.Frames.ElementAt(0).FirstRoll = 5;
-        //    game.Frames.ElementAt(0).SecondRoll = 5;
-        //
-        //    game.Score.Should().Be(29);
-        //}
+            game.Score.Should().Be(21);
+        }
+
+        [Fact]
+        public void EditFrame_MakeFirstFrameASpareRestOnes_29()
+        {
+            RollManyFrames(1, 1);
+            game.Frames.ElementAt(0).FirstRoll = 5;
+            game.Frames.ElementAt(0).SecondRoll = 5;
+
+            game.Score.Should().Be(29);
+        }
     }
 }

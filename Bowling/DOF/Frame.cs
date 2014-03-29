@@ -8,8 +8,8 @@ namespace Bowling.DOF
         private readonly Game _game;
         private readonly int _index;
 
-        private int _firstRoll;
-        private int _secondRoll;
+        private Independent<int> _firstRoll = new Independent<int>();
+        private Independent<int> _secondRoll = new Independent<int>();
 
         public Frame(Game game, int index)
         {
@@ -20,13 +20,13 @@ namespace Bowling.DOF
         public int FirstRoll
         {
             get { return _firstRoll; }
-            set { _firstRoll = value; }
+            set { _firstRoll.Value = value; }
         }
 
         public int SecondRoll
         {
             get { return _secondRoll; }
-            set { _secondRoll = value; }
+            set { _secondRoll.Value = value; }
         }
 
         public int Score

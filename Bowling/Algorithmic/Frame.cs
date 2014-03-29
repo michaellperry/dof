@@ -4,13 +4,24 @@ namespace Bowling.Algorithmic
 {
     public class Frame
     {
+        private int _score;
         private readonly Game _game;
         private readonly int _index;
 
         private int _firstRoll;
         private int _secondRoll;
 
-        public int Score { get; private set; }
+        public int Score
+        {
+            get
+            {
+                return _score;
+            }
+            private set
+            {
+                _score = value;
+            }
+        }
 
         public Frame(Game game, int index)
         {
@@ -23,6 +34,7 @@ namespace Bowling.Algorithmic
             get { return _firstRoll; }
             set
             {
+                Score -= _firstRoll;
                 _firstRoll = value;
                 Score += value;
                 _game.ScoreBonusForFirstRoll(value, _index);
@@ -34,6 +46,7 @@ namespace Bowling.Algorithmic
             get { return _secondRoll; }
             set
             {
+                Score -= _secondRoll;
                 _secondRoll = value;
                 Score += value;
                 _game.ScoreBonusForSecondRoll(value, _index);

@@ -28,15 +28,12 @@ namespace DungeonsAndDragons.DOF
             get { return Level / 2 + DexterityModifier; }
         }
 
-        public int CurrentAttack
+        public int GetCurrentAttack(Race race)
         {
-            get
-            {
-                if (CurrentWeapon.IsMelee)
-                    return BaseMeleeAttack + CurrentWeapon.AttackBonus;
-                else
-                    return BaseRangedAttack + CurrentWeapon.AttackBonus;
-            }
+            if (CurrentWeapon.IsMelee)
+                return BaseMeleeAttack + CurrentWeapon.RacialAttackBonus(race);
+            else
+                return BaseRangedAttack + CurrentWeapon.RacialAttackBonus(race);
         }
 
         public void Equip(IWeapon weapon)
@@ -46,7 +43,7 @@ namespace DungeonsAndDragons.DOF
 
         public bool Attack(Creature creature, int roll)
         {
-            return CurrentAttack + roll >= creature.ArmorClass;
+            return GetCurrentAttack(creature.Race) + roll >= creature.ArmorClass;
         }
     }
 }
