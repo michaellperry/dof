@@ -81,7 +81,7 @@ namespace Bowling
         //public void EditFrame_AllBallsKnockDownOnePin_OneMorePin_21()
         //{
         //    RollManyFrames(1, 1);
-        //    game.Frame(2).FirstRoll = 2;
+        //    game.Frames.ElementAt(2).FirstRoll = 2;
         //
         //    game.Score.Should().Be(21);
         //}
@@ -90,8 +90,8 @@ namespace Bowling
         //public void EditFrame_MakeFirstFrameASpareRestOnes_29()
         //{
         //    RollManyFrames(1, 1);
-        //    game.Frame(0).FirstRoll = 5;
-        //    game.Frame(0).SecondRoll = 5;
+        //    game.Frames.ElementAt(0).FirstRoll = 5;
+        //    game.Frames.ElementAt(0).SecondRoll = 5;
         //
         //    game.Score.Should().Be(29);
         //}
