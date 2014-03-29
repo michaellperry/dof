@@ -121,10 +121,6 @@
       <Name>Bowling</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <DesignData Include="SampleData\FrameViewModelSampleData.xaml" />
-    <DesignData Include="SampleData\GameViewModelSampleData.xaml" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

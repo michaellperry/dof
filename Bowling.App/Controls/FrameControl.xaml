@@ -8,7 +8,7 @@
 		<BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
 	</UserControl.Resources>
     <Border BorderBrush="Black" BorderThickness="1" Margin="0,0,-1,0">
-		<Grid d:DataContext="{d:DesignData /SampleData/FrameViewModelSampleData.xaml}">
+		<Grid>
 			<Grid.RowDefinitions>
 				<RowDefinition Height="30"/>
 				<RowDefinition/>
