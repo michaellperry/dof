@@ -22,7 +22,7 @@ namespace DungeonsAndDragons.Precalculated
 
         public virtual int RacialAttackBonus(Race race)
         {
-            return 0;
+            return _attackBonus;
         }
     }
 }
