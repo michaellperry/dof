@@ -6,8 +6,7 @@ namespace SettlersOfCatan.DOF
     public class Game
     {
         private readonly Player[] _players;
-        private List<Draw> _draws = new List<Draw>();
-        private List<Trade> _trades = new List<Trade>();
+        private List<Move> _moves = new List<Move>();
 
         public Game(int playerCount)
         {
@@ -24,7 +23,7 @@ namespace SettlersOfCatan.DOF
 
         public void Draw(Player player, Resources resources)
         {
-            _draws.Add(new Draw
+            _moves.Add(new Draw
             {
                 Player = player,
                 Resources = resources
@@ -36,7 +35,7 @@ namespace SettlersOfCatan.DOF
             playerA.Hand.RequireAtLeast(resourcesA);
             playerB.Hand.RequireAtLeast(resourcesB);
 
-            _trades.Add(new Trade
+            _moves.Add(new Trade
             {
                 PlayerA = playerA,
                 ResourcesA = resourcesA,
@@ -45,9 +44,15 @@ namespace SettlersOfCatan.DOF
             });
         }
 
+        public List<Move> Moves
+        {
+            get { return _moves; }
+        }
+
         internal Resources DrawsFor(Player player)
         {
-            return _draws
+            return _moves
+                .OfType<Draw>()
                 .Where(d => d.Player == player)
                 .Select(d => d.Resources)
                 .Sum();
@@ -55,10 +60,12 @@ namespace SettlersOfCatan.DOF
 
         internal Resources TradesTo(Player player)
         {
-            var tradesA = _trades
+            var tradesA = _moves
+                .OfType<Trade>()
                 .Where(t => t.PlayerA == player)
                 .Select(t => t.ResourcesB);
-            var tradesB = _trades
+            var tradesB = _moves
+                .OfType<Trade>()
                 .Where(t => t.PlayerB == player)
                 .Select(t => t.ResourcesA);
             return tradesA.Union(tradesB)
@@ -67,10 +74,12 @@ namespace SettlersOfCatan.DOF
 
         public Resources TradesFrom(Player player)
         {
-            var tradesA = _trades
+            var tradesA = _moves
+                .OfType<Trade>()
                 .Where(t => t.PlayerA == player)
                 .Select(t => t.ResourcesA);
-            var tradesB = _trades
+            var tradesB = _moves
+                .OfType<Trade>()
                 .Where(t => t.PlayerB == player)
                 .Select(t => t.ResourcesB);
             return tradesA.Union(tradesB)
