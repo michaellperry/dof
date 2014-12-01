@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30110.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bowling", "Bowling\Bowling.csproj", "{F56EA9BD-E324-4CEA-B0A3-9F57CE8FD7AB}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SettlersOfCatan", "SettlersOfCatan\SettlersOfCatan.csproj", "{E40FBAEF-97E9-45FC-A6A8-0A5A830D39D0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bowling.App", "Bowling.App\Bowling.App.csproj", "{0FB5624D-0AA5-4BC2-AAB9-EBFBFB421DA2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bowling.Portable", "Bowling.Portable\Bowling.Portable.csproj", "{A94DB009-A0AA-4979-808D-3B38DBFAF926}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{0FB5624D-0AA5-4BC2-AAB9-EBFBFB421DA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FB5624D-0AA5-4BC2-AAB9-EBFBFB421DA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FB5624D-0AA5-4BC2-AAB9-EBFBFB421DA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A94DB009-A0AA-4979-808D-3B38DBFAF926}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A94DB009-A0AA-4979-808D-3B38DBFAF926}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A94DB009-A0AA-4979-808D-3B38DBFAF926}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A94DB009-A0AA-4979-808D-3B38DBFAF926}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

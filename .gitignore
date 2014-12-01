@@ -1,3 +1,4 @@
+*.ide/
 packages/
 
 #ignore thumbnails created by windows
