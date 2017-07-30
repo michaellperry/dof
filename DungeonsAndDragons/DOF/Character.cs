@@ -8,25 +8,17 @@ namespace DungeonsAndDragons.DOF
         public int Dexterity { get; set; }
         public IWeapon CurrentWeapon { get; set; }
 
-        public int StrengthModifier
-        {
-            get { return Strength / 2 - 5; }
-        }
+        public int StrengthModifier =>
+            Strength / 2 - 5;
 
-        public int DexterityModifier
-        {
-            get { return Dexterity / 2 - 5; }
-        }
+        public int DexterityModifier =>
+            Dexterity / 2 - 5;
 
-        public int BaseMeleeAttack
-        {
-            get { return Level / 2 + StrengthModifier; }
-        }
+        public int BaseMeleeAttack =>
+            Level / 2 + StrengthModifier;
 
-        public int BaseRangedAttack
-        {
-            get { return Level / 2 + DexterityModifier; }
-        }
+        public int BaseRangedAttack =>
+            Level / 2 + DexterityModifier;
 
         public int GetCurrentAttack(Creature creature)
         {

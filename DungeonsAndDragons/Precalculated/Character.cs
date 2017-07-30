@@ -8,9 +8,13 @@ namespace DungeonsAndDragons.Precalculated
 
         public int Level { get; set; }
 
+        public int BaseMeleeAttack { get; set; }
+        public int BaseRangedAttack { get; set; }
+        public int CurrentAttack { get; set; }
+
         public int Strength
         {
-            get { return _strength; }
+            get => _strength;
             set
             {
                 _strength = value;
@@ -21,7 +25,7 @@ namespace DungeonsAndDragons.Precalculated
 
         public int Dexterity
         {
-            get { return _dexterity; }
+            get => _dexterity;
             set
             {
                 _dexterity = value;
@@ -29,10 +33,6 @@ namespace DungeonsAndDragons.Precalculated
                 BaseRangedAttack = Level / 2 + dexModifier;
             }
         }
-
-        public int BaseMeleeAttack { get; set; }
-        public int BaseRangedAttack { get; set; }
-        public int CurrentAttack { get; set; }
 
         public void Equip(IWeapon weapon)
         {

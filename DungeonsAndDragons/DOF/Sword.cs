@@ -11,15 +11,9 @@ namespace DungeonsAndDragons.DOF
             _attackBonus = attackBonus;
         }
 
-        public bool IsMelee
-        {
-            get { return true; }
-        }
+        public bool IsMelee => true;
 
-        public int AttackBonus
-        {
-            get { return _attackBonus; }
-        }
+        public int AttackBonus => _attackBonus;
 
         public virtual int RacialAttackBonus(Race race)
         {
