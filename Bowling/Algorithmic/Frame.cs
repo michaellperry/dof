@@ -20,7 +20,7 @@ namespace Bowling.Algorithmic
 
         public int FirstRoll
         {
-            get { return _firstRoll; }
+            get => _firstRoll;
             set
             {
                 _firstRoll = value;
@@ -31,7 +31,7 @@ namespace Bowling.Algorithmic
 
         public int SecondRoll
         {
-            get { return _secondRoll; }
+            get => _secondRoll;
             set
             {
                 _secondRoll = value;

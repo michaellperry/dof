@@ -7,8 +7,6 @@ namespace Bowling.DOF
     public class Game
     {
         private readonly Frame[] _frames;
-        private int _firstExtra;
-        private int _secondExtra;
 
         public Game()
         {
@@ -18,27 +16,12 @@ namespace Bowling.DOF
                 .ToArray();
         }
 
-        public IEnumerable<Frame> Frames
-        {
-            get { return _frames; }
-        }
+        public IEnumerable<Frame> Frames => _frames;
 
-        public int FirstExtra
-        {
-            get { return _firstExtra; }
-            set { _firstExtra = value; }
-        }
+        public int FirstExtra { get; set; }
+        public int SecondExtra { get; set; }
 
-        public int SecondExtra
-        {
-            get { return _secondExtra; }
-            set { _secondExtra = value; }
-        }
-
-        public int Score
-        {
-            get { return _frames.Sum(f => f.Score); }
-        }
+        public int Score => _frames.Sum(f => f.Score);
 
         internal int NextOne(int index)
         {

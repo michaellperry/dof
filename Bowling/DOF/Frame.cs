@@ -8,8 +8,8 @@ namespace Bowling.DOF
         private readonly Game _game;
         private readonly int _index;
 
-        private int _firstRoll;
-        private int _secondRoll;
+        public int FirstRoll { get; set; }
+        public int SecondRoll { get; set; }
 
         public Frame(Game game, int index)
         {
@@ -17,46 +17,21 @@ namespace Bowling.DOF
             _index = index;
         }
 
-        public int FirstRoll
-        {
-            get { return _firstRoll; }
-            set { _firstRoll = value; }
-        }
+        public int Score =>
+            IsStrike
+                ? 10 + _game.NextTwo(_index) :
+            IsSpare
+                ? 10 + _game.NextOne(_index) :
+            FirstRoll + SecondRoll;
 
-        public int SecondRoll
-        {
-            get { return _secondRoll; }
-            set { _secondRoll = value; }
-        }
+        public int OneRoll => FirstRoll;
 
-        public int Score
-        {
-            get
-            {
-                if (FirstRoll == 10)
-                    return 10 + _game.NextTwo(_index);
+        public int TwoRolls =>
+            IsStrike
+                ? 10 + _game.NextOne(_index)
+                : FirstRoll + SecondRoll;
 
-                if (FirstRoll + SecondRoll == 10)
-                    return 10 + _game.NextOne(_index);
-
-                return FirstRoll + SecondRoll;
-            }
-        }
-
-        public int OneRoll
-        {
-            get { return FirstRoll; }
-        }
-
-        public int TwoRolls
-        {
-            get
-            {
-                if (FirstRoll == 10)
-                    return 10 + _game.NextOne(_index);
-
-                return FirstRoll + SecondRoll;
-            }
-        }
+        private bool IsStrike => FirstRoll == 10;
+        private bool IsSpare => FirstRoll + SecondRoll == 10;
     }
 }

@@ -17,14 +17,11 @@ namespace Bowling.Algorithmic
                 .ToArray();
         }
 
-        public IEnumerable<Frame> Frames
-        {
-            get { return _frames; }
-        }
+        public IEnumerable<Frame> Frames => _frames;
 
         public int FirstExtra
         {
-            get { return _firstExtra; }
+            get => _firstExtra;
             set
             {
                 _firstExtra = value;
@@ -34,7 +31,7 @@ namespace Bowling.Algorithmic
 
         public int SecondExtra
         {
-            get { return _secondExtra; }
+            get => _secondExtra;
             set
             {
                 _secondExtra = value;
@@ -42,10 +39,7 @@ namespace Bowling.Algorithmic
             }
         }
 
-        public int Score
-        {
-            get { return _frames.Sum(f => f.Score); }
-        }
+        public int Score => _frames.Sum(f => f.Score);
 
         internal void ScoreBonusForFirstRoll(int value, int index)
         {
