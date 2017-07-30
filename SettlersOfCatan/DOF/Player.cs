@@ -10,15 +10,9 @@ namespace SettlersOfCatan.DOF
             _game = game;
         }
 
-        public Resources Hand
-        {
-            get
-            {
-                return
-                    _game.DrawsFor(this) +
-                    _game.TradesTo(this) -
-                    _game.TradesFrom(this);
-            }
-        }
+        public Resources Hand =>
+            _game.DrawsFor(this) +
+            _game.TradesTo(this) -
+            _game.TradesFrom(this);
     }
 }

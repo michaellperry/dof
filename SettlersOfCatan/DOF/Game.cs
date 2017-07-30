@@ -44,10 +44,7 @@ namespace SettlersOfCatan.DOF
             });
         }
 
-        public List<Move> Moves
-        {
-            get { return _moves; }
-        }
+        public IEnumerable<Move> Moves => _moves;
 
         internal Resources DrawsFor(Player player)
         {
