@@ -10,6 +10,15 @@ namespace SettlersOfCatan.Mutable
         public int Ore { get; set; }
         public int Wheat { get; set; }
 
+        public Resources(int wood = 0, int brick = 0, int wool = 0, int ore = 0, int wheat = 0)
+        {
+            Wood = wood;
+            Brick = brick;
+            Wool = wool;
+            Ore = ore;
+            Wheat = wheat;
+        }
+
         public void RequireAtLeast(Resources other)
         {
             if (Wood < other.Wood)

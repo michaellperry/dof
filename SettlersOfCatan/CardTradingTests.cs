@@ -30,19 +30,19 @@ namespace SettlersOfCatan
             Player two = _game.GetPlayer(1);
 
             _game.Draw(one, new Resources
-            {
-                Wood = 2,
-                Brick = 1
-            });
+            (
+                wood: 2,
+                brick: 1
+            ));
             _game.Draw(two, new Resources
-            {
-                Wool = 1,
-                Wheat = 1
-            });
+            (
+                wool: 1,
+                wheat: 1
+            ));
 
             _game.Trade(
-                one, new Resources { Wood = 1 },
-                two, new Resources { Wheat = 1 });
+                one, new Resources ( wood: 1 ),
+                two, new Resources ( wheat: 1 ));
 
             one.Hand.Wood.Should().Be(1);
             two.Hand.Wood.Should().Be(1);
@@ -57,17 +57,17 @@ namespace SettlersOfCatan
             Player two = _game.GetPlayer(1);
 
             _game.Draw(one, new Resources
-            {
-                Wood = 1
-            });
+            (
+                wood: 1
+            ));
             _game.Draw(two, new Resources
-            {
-                Wheat = 2
-            });
+            (
+                wheat: 2
+            ));
 
             Action trade = () => _game.Trade(
-                one, new Resources { Wood = 2 },
-                two, new Resources { Wheat = 2 });
+                one, new Resources ( wood: 2 ),
+                two, new Resources ( wheat: 2 ));
 
             trade.ShouldThrow<ArgumentException>(
                 "The player does not have enough Wood.");
@@ -80,19 +80,19 @@ namespace SettlersOfCatan
         //    Player two = _game.GetPlayer(1);
         //
         //    _game.Draw(one, new Resources
-        //    {
-        //        Wood = 2,
-        //        Brick = 1
-        //    });
+        //    (
+        //        wood: 2,
+        //        brick: 1
+        //    ));
         //    _game.Draw(two, new Resources
-        //    {
-        //        Wool = 1,
-        //        Wheat = 1
-        //    });
+        //    (
+        //        wool: 1,
+        //        wheat: 1
+        //    ));
         //
         //    _game.Trade(
-        //        one, new Resources { Wood = 1 },
-        //        two, new Resources { Wheat = 1 });
+        //        one, new Resources ( wood: 1 ),
+        //        two, new Resources ( wheat: 1 ));
         //
         //    Move[] moves = _game.Moves.ToArray();
         //    moves.Length.Should().Be(3);
