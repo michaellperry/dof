@@ -24,10 +24,10 @@ namespace SettlersOfCatan.DOF
         public void Draw(Player player, Resources resources)
         {
             _moves.Add(new Draw
-            {
-                Player = player,
-                Resources = resources
-            });
+            (
+                player: player,
+                resources: resources
+            ));
         }
 
         public void Trade(Player playerA, Resources resourcesA, Player playerB, Resources resourcesB)
@@ -36,12 +36,12 @@ namespace SettlersOfCatan.DOF
             playerB.Hand.RequireAtLeast(resourcesB);
 
             _moves.Add(new Trade
-            {
-                PlayerA = playerA,
-                ResourcesA = resourcesA,
-                PlayerB = playerB,
-                ResourcesB = resourcesB
-            });
+            (
+                playerA: playerA,
+                resourcesA: resourcesA,
+                playerB: playerB,
+                resourcesB: resourcesB
+            ));
         }
 
         public IEnumerable<Move> Moves => _moves;
