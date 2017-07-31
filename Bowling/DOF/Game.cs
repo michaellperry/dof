@@ -8,6 +8,9 @@ namespace Bowling.DOF
     {
         private readonly Frame[] _frames;
 
+        public int FirstExtra { get; set; }
+        public int SecondExtra { get; set; }
+
         public Game()
         {
             _frames = Enumerable
@@ -17,9 +20,6 @@ namespace Bowling.DOF
         }
 
         public IEnumerable<Frame> Frames => _frames;
-
-        public int FirstExtra { get; set; }
-        public int SecondExtra { get; set; }
 
         public int Score => _frames.Sum(f => f.Score);
 
