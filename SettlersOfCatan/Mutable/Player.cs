@@ -3,7 +3,7 @@ namespace SettlersOfCatan.Mutable
 {
     public class Player
     {
-        public Resources Hand { get; private set; }
+        public Resources Hand { get; }
 
         public Player()
         {
